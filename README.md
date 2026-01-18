@@ -64,7 +64,12 @@ python duck_hunt_controller.py
 - **Confirmation-based trigger**: Requires 2+ consistent frames before firing/releasing
 - **Velocity-based cursor easing**: Faster response for large movements
 
+## In Action
+<img width="1600" height="752" alt="image" src="https://github.com/user-attachments/assets/31f1cdb7-055c-4239-b30e-ba1d1a4ec290" />
+
+
 ### Thresholds
 - Fire threshold: 55% of calibrated range
 - Release threshold: 35% of calibrated range
 - Shot cooldown: 350ms
+
