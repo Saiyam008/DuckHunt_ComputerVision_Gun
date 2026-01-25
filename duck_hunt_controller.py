@@ -116,6 +116,7 @@ def run_game_controller():
         show_display = True
         shot_count = 0
         frames_without_hand = 0
+        was_firing = False
         
         while True:
             ret, frame = cap.read()
@@ -148,9 +149,11 @@ def run_game_controller():
                     detector.update_trigger_state(hand_landmarks)
                     is_firing = detector.is_trigger_pulled()
                     
-                    if is_firing:
+                    if is_firing and not was_firing:
                         pyautogui.click(_pause=False)
                         shot_count += 1
+                    
+                    was_firing = is_firing
                     
                     if show_display:
                         current_dist = detector.get_current_distance(hand_landmarks)
